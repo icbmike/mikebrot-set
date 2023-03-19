@@ -1,11 +1,30 @@
 {
-  "name": "mikebrot-set",
+  "name": "my-webpack-project",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Mike Little",
   "license": "MIT",
   "private": false,
   "dependencies": {
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "webpack": "^5.76.2"
+  },
+  "devDependencies": {
+    "@webpack-cli/generators": "^3.0.1",
+    "css-loader": "^6.7.3",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.8.4",
+    "style-loader": "^3.3.2",
+    "ts-loader": "^9.4.2",
+    "webpack-cli": "^5.0.1",
+    "webpack-dev-server": "^4.13.1"
+  },
+  "description": "My webpack project",
+  "scripts": {
+    "build": "webpack --mode=production --node-env=production",
+    "build:dev": "webpack --mode=development",
+    "build:prod": "webpack --mode=production --node-env=production",
+    "watch": "webpack --watch",
+    "serve": "webpack serve"
   }
 }
