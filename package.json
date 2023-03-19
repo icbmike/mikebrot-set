@@ -4,5 +4,8 @@
   "main": "index.js",
   "author": "Mike Little",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "dependencies": {
+    "typescript": "^5.0.2"
+  }
 }
