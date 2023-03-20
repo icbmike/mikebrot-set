@@ -1,3 +1,9 @@
+interface ComplexNumber {
+  r: number;
+  i: number;
+}
+
+const maxIterations = 10;
 const resolution = 0.005;
 
 export const draw = (
@@ -8,12 +14,8 @@ export const draw = (
   ctx.resetTransform();
   ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
 
-  // Change to centered coordinates
-  ctx.translate(500, 400);
-  ctx.scale(125 * zoom, -125 * zoom);
-  ctx.translate(lookAt.r, -lookAt.i);
-
-  ctx.fillStyle = "white";
+  ctx.restore();
+  ctx.save();
 
   for (let i = -2; i <= 1; i += resolution) {
     for (let j = -1.2; j <= 1.2; j += resolution) {
@@ -21,13 +23,6 @@ export const draw = (
     }
   }
 };
-
-interface ComplexNumber {
-  r: number;
-  i: number;
-}
-
-const maxIterations = 10;
 
 const drawCell = (ctx: CanvasRenderingContext2D, x: number, y: number) => {
   if (!diverges({ r: x, i: y })) {

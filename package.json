@@ -6,6 +6,7 @@
   "license": "MIT",
   "private": false,
   "dependencies": {
+    "gl-matrix": "^3.4.3",
     "typescript": "^5.0.2",
     "webpack": "^5.76.2"
   },
